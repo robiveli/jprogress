@@ -57,8 +57,11 @@ Demo available [here](http://www.rvdizajn.com/jprogress/).
 ### API ###
 
 `start()` - start progress 
+
 `stop()` - stop progress 
+
 `configure()` - set options
+
 
 
 ### License  ###
