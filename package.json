@@ -1,0 +1,33 @@
+{
+  "name": "jprogress",
+  "title": "jProgress.js",
+  "description": "Simple slim lightweight(<2KB) JavaScript progress bar plugin",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Robert Velickovski",
+    "email": "roby@rvdizajn.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robiveli/jprogress.git"
+  },
+  "keywords": [
+    "progress",
+    "vanilla",
+    "simple",
+    "dependency-free",
+    "lightweight",
+    "javascript"
+  ],
+  "devDependencies": {
+    "babel-preset-env": "^1.4.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-htmlmin": "^2.3.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-umd": "^2.4.0",
+    "load-grunt-tasks": "^3.5.2"
+  }
+}
