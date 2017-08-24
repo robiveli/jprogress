@@ -20,7 +20,7 @@ function styleBar($jProgress, $bar, $barBg, context) {
         'height: ' + context.options.progressHeight + 
         'px; height: ' + context.options.progressHeight/10 + 'rem; ' + 
         'z-index: ' + context.options.zIndex + ';' + 
-        'position: absolute; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;');
+        'position: fixed; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;');
 
     $bar.setAttribute('style', 
     'background-color: '  + context.options.brandColor + ';' + 

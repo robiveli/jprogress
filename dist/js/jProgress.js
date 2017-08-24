@@ -28,7 +28,7 @@ function render(context) {
 
 function styleBar($jProgress, $bar, $barBg, context) {
 
-    $jProgress.setAttribute('style', 'height: ' + context.options.progressHeight + 'px; height: ' + context.options.progressHeight / 10 + 'rem; ' + 'z-index: ' + context.options.zIndex + ';' + 'position: absolute; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;');
+    $jProgress.setAttribute('style', 'height: ' + context.options.progressHeight + 'px; height: ' + context.options.progressHeight / 10 + 'rem; ' + 'z-index: ' + context.options.zIndex + ';' + 'position: fixed; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;');
 
     $bar.setAttribute('style', 'background-color: ' + context.options.brandColor + ';' + 'width: 1px; height: 100%; transition: all 500ms ease-in-out;');
 
