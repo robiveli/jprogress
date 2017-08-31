@@ -32,7 +32,7 @@ Demo available [here](http://www.rvdizajn.com/jprogress/).
 - **brandColor** *(default:#de6c4f)* - background color of progress bar
 - **progressHeight** *(default:3)* - progress bar height
 - **zIndex** *(default:9999)* - z-index value of progress bar
-- **parent** *(default:body)* - parent container
+- **parent** *(default:body)* - parent container in which jProgress is appended
 
 
 **Example**

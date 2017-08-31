@@ -16,13 +16,17 @@
 
 'use strict';
 
-var jProgress, animateInterval, $jProgress, $bar, $barBg;
+var jProgress = void 0,
+    animateInterval = void 0,
+    $jProgress = void 0,
+    $bar = void 0,
+    $barBg = void 0;
 
 function render(context) {
 
     document.querySelector(context.options.parent).insertAdjacentHTML('beforeend', '<div class="jProgress">\
-        <div class="bar"></div>\
-        <div class="barBg"></div>\
+            <div class="bar"></div>\
+            <div class="barBg"></div>\
     </div>');
 }
 
@@ -39,7 +43,7 @@ function animateBar($bar) {
 
     var maxWidth = window.innerWidth,
         step = 10,
-        increaseBar;
+        increaseBar = void 0;
 
     animateInterval = setInterval(function () {
 

@@ -1,4 +1,6 @@
-var jProgress, 
+'use strict';
+
+let jProgress, 
     animateInterval,
     $jProgress, 
     $bar,
@@ -7,9 +9,9 @@ var jProgress,
 function render(context) { 
 
     document.querySelector(context.options.parent).insertAdjacentHTML('beforeend', 
-        '<div class="jProgress">\
-        <div class="bar"></div>\
-        <div class="barBg"></div>\
+    '<div class="jProgress">\
+            <div class="bar"></div>\
+            <div class="barBg"></div>\
     </div>');
 
 }
@@ -34,7 +36,7 @@ function styleBar($jProgress, $bar, $barBg, context) {
 
 function animateBar($bar) { 
 
-    var maxWidth = window.innerWidth,
+    let maxWidth = window.innerWidth,
         step = 10,
         increaseBar;
 

@@ -10,11 +10,20 @@ module.exports = function(grunt) {
 
         babel: {
             options: {
-                presets: ['env']
+                presets: [
+                    ['env', {
+                        'targets': {
+                            'browsers': ['last 8 versions', 'Explorer >= 9']
+                        },
+                        modules: false
+                    }]
+                ]
             },
             dist: {
                 files: {
-                    '<%= settings.distPath %>js/<%= settings.library %>.js': ['<%= settings.srcPath %>js/<%= settings.library %>.js']
+                    '<%= settings.distPath %>js/<%= settings.library %>.js': [
+                    '<%= settings.srcPath %>js/<%= settings.library %>.js'
+                    ]
                 }
             }
         },
@@ -25,7 +34,9 @@ module.exports = function(grunt) {
                     beautify:  false
                 },
                 files: {
-                    '<%= settings.distPath %>js/<%= settings.library %>.min.js': ['<%= settings.distPath %>js/<%= settings.library %>.js']
+                    '<%= settings.distPath %>js/<%= settings.library %>.min.js': [
+                    '<%= settings.distPath %>js/<%= settings.library %>.js'
+                    ]
                 }
             }
         },
@@ -78,6 +89,6 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
 
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['umd', 'uglify', 'babel', 'htmlmin']);
+    grunt.registerTask('build', ['babel', 'umd', 'uglify', 'htmlmin']);
 
 };
