@@ -2,12 +2,13 @@
   "name": "jprogress",
   "title": "jProgress.js",
   "description": "Simple slim lightweight(<2KB) JavaScript progress bar plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "MIT",
   "author": {
     "name": "Robert Velickovski",
     "email": "roby@rvdizajn.com"
   },
+  "main": "dist/js/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/robiveli/jprogress.git"
@@ -21,14 +22,23 @@
     "javascript"
   ],
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
-    "grunt": "^1.0.1",
-    "grunt-babel": "^7.0.0",
-    "grunt-contrib-htmlmin": "^2.4.0",
-    "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-umd": "^2.4.0",
-    "load-grunt-tasks": "^3.5.2"
-  }
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-object-assign": "^7.7.4",
+    "@babel/preset-env": "^7.7.7",
+    "grunt": "^1.0.4",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-htmlmin": "^3.1.0",
+    "grunt-contrib-uglify": "^4.0.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-umd": "^3.0.0",
+    "load-grunt-tasks": "^5.1.0"
+  },
+  "scripts": {
+    "preinstall": "npm install -g npm-check-updates",
+    "watch": "grunt watch",
+    "build": "grunt build && ncu",
+    "dependency-check": "ncu",
+    "dependency-update": "ncu -u && npm install && npm audit fix"
+  },
+  "dependencies": {}
 }

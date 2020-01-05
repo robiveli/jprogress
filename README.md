@@ -5,20 +5,20 @@ Simple slim lightweight(<2KB) JavaScript progress bar, good for visual loading i
 ### Install ###
 
 With npm:
-```sh
-npm install jprogress
 ```
-
-With Bower:
-```sh
-bower install jprogress
+npm install jprogress
 ```
 
 ### Usage ###
 
 Just include required JavaScript:
-```sh
+```
 <script src="jProgress.js"></script>
+```
+
+or
+```
+import jProgress from 'jProgress';
 ```
 
 
@@ -36,18 +36,18 @@ Demo available [here](http://www.rvdizajn.com/jprogress/).
 
 
 **Example**
-```sh
+```
 <script>
     jProgress.configure({
 
         progressHeight: '5',
         zIndex: '2'
-        
-    }).start(); 
+
+    }).start();
 
     window.onload = function() {
 
-        jProgress.stop(); 
+        jProgress.stop();
 
     };
 </script>
@@ -56,9 +56,9 @@ Demo available [here](http://www.rvdizajn.com/jprogress/).
 
 ### API ###
 
-`start()` - start progress 
+`start()` - start progress
 
-`stop()` - stop progress 
+`stop()` - stop progress
 
 `configure()` - set options
 

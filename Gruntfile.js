@@ -5,24 +5,14 @@ module.exports = function(grunt) {
         settings: {
             srcPath: 'src/',
             distPath: 'dist/',
-            library: 'jProgress'
+            fileName: 'index'
         },
 
         babel: {
-            options: {
-                presets: [
-                    ['env', {
-                        'targets': {
-                            'browsers': ['last 8 versions', 'Explorer >= 9']
-                        },
-                        modules: false
-                    }]
-                ]
-            },
             dist: {
                 files: {
-                    '<%= settings.distPath %>js/<%= settings.library %>.js': [
-                    '<%= settings.srcPath %>js/<%= settings.library %>.js'
+                    '<%= settings.distPath %>js/<%= settings.fileName %>.js': [
+                        '<%= settings.srcPath %>js/<%= settings.fileName %>.js'
                     ]
                 }
             }
@@ -34,8 +24,8 @@ module.exports = function(grunt) {
                     beautify:  false
                 },
                 files: {
-                    '<%= settings.distPath %>js/<%= settings.library %>.min.js': [
-                    '<%= settings.distPath %>js/<%= settings.library %>.js'
+                    '<%= settings.distPath %>js/<%= settings.fileName %>.min.js': [
+                    '<%= settings.distPath %>js/<%= settings.fileName %>.js'
                     ]
                 }
             }
@@ -44,23 +34,23 @@ module.exports = function(grunt) {
         umd: {
             all: {
                 options: {
-                    src: '<%= settings.distPath %>js/<%= settings.library %>.js',
-                    dest: '<%= settings.distPath %>js/<%= settings.library %>.js',
+                    src: '<%= settings.distPath %>js/<%= settings.fileName %>.js',
+                    dest: '<%= settings.distPath %>js/<%= settings.fileName %>.js',
                     objectToExport: 'jProgress',
                 }
             }
         },
 
         htmlmin: {
-            dist: { 
-              options: {  
+            dist: {
+              options: {
                 removeComments: true,
                 collapseWhitespace: true
               },
               files: [{
-                    expand: true, 
-                    cwd: '<%= settings.srcPath %>', 
-                    src: ['**/*.html'], 
+                    expand: true,
+                    cwd: '<%= settings.srcPath %>',
+                    src: ['**/*.html'],
                     dest: '<%= settings.distPath %>'
                 }]
             }
