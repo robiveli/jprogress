@@ -24,7 +24,7 @@ import jProgress from 'jProgress';
 
 ### Demo ###
 
-Demo available [here](http://www.rvdizajn.com/jprogress/).
+Demo available [here](https://robiveli.github.io/jprogress/).
 
 
 ### Options ###
