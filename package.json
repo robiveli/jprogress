@@ -1,44 +1,42 @@
 {
-  "name": "jprogress",
-  "title": "jProgress.js",
-  "description": "Simple slim lightweight(<2KB) JavaScript progress bar plugin",
-  "version": "1.2.0",
-  "license": "MIT",
-  "author": {
-    "name": "Robert Velickovski",
-    "email": "roby@rvdizajn.com"
-  },
-  "main": "dist/js/index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/robiveli/jprogress.git"
-  },
-  "keywords": [
-    "progress",
-    "vanilla",
-    "simple",
-    "dependency-free",
-    "lightweight",
-    "javascript"
-  ],
-  "devDependencies": {
-    "@babel/core": "^7.7.7",
-    "@babel/plugin-transform-object-assign": "^7.7.4",
-    "@babel/preset-env": "^7.7.7",
-    "grunt": "^1.0.4",
-    "grunt-babel": "^8.0.0",
-    "grunt-contrib-htmlmin": "^3.1.0",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-umd": "^3.0.0",
-    "load-grunt-tasks": "^5.1.0"
-  },
-  "scripts": {
-    "preinstall": "npm install -g npm-check-updates",
-    "watch": "grunt watch",
-    "build": "grunt build && ncu",
-    "dependency-check": "ncu",
-    "dependency-update": "ncu -u && npm install && npm audit fix"
-  },
-  "dependencies": {}
+    "name": "jprogress",
+    "title": "jProgress.js",
+    "description": "Simple slim lightweight(<2KB) JavaScript progress bar plugin",
+    "version": "1.2.1",
+    "license": "MIT",
+    "author": {
+        "name": "Robert Velickovski",
+        "email": "roby@rvdizajn.com"
+    },
+    "main": "dist/js/index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/robiveli/jprogress.git"
+    },
+    "keywords": [
+        "progress",
+        "vanilla",
+        "simple",
+        "dependency-free",
+        "lightweight",
+        "javascript"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.7.7",
+        "@babel/preset-env": "^7.7.7",
+        "grunt": "^1.0.4",
+        "grunt-babel": "^8.0.0",
+        "grunt-contrib-uglify": "^4.0.1",
+        "grunt-contrib-watch": "^1.1.0",
+        "grunt-minify-html": "^3.0.0",
+        "grunt-umd": "^3.0.0",
+        "load-grunt-tasks": "^5.1.0"
+    },
+    "scripts": {
+        "dev": "grunt watch",
+        "build": "grunt build"
+    },
+    "dependencies": {
+        "grunt-contrib-uglify-es": "github:gruntjs/grunt-contrib-uglify#harmony"
+    }
 }

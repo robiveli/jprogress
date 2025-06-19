@@ -17,86 +17,77 @@
 
 "use strict";
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var jProgress, animateInterval, $jProgress, $bar, $barBg;
-
+let jProgress, animateInterval, $jProgress, $bar, $barBg;
 function render() {
-  document.querySelector(this.options.parent).insertAdjacentHTML('beforeend', '<div class="jProgress"><div class="bar"></div><div class="barBg"></div></div>');
+  document.querySelector(this.options.parent).insertAdjacentHTML("beforeend", '<div class="jProgress"><div class="bar"></div><div class="barBg"></div></div>');
 }
+
 /**
  * @param {Object}
  * @param {Object}
  * @param {Object}
  * @param {Object}
-*/
-
-
+ */
 function styleBar($jProgress, $bar, $barBg, context) {
-  $jProgress.setAttribute('style', 'height: ' + context.options.progressHeight + 'px; height: ' + context.options.progressHeight / 10 + 'rem; ' + 'z-index: ' + context.options.zIndex + ';' + 'position: fixed; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;');
-  $bar.setAttribute('style', 'background-color: ' + context.options.brandColor + ';' + 'width: 1px; height: 100%; transition: all 500ms ease-in-out;');
-  $barBg.setAttribute('style', 'background-color: ' + context.options.brandColor + ';' + 'position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.15;');
+  $jProgress.setAttribute("style", "height: " + context.options.progressHeight + "px; height: " + context.options.progressHeight / 10 + "rem; " + "z-index: " + context.options.zIndex + ";" + "position: fixed; top: 0; left: 0; right: 0; transition: all 250ms ease-in-out;");
+  $bar.setAttribute("style", "background-color: " + context.options.brandColor + ";" + "width: 1px; height: 100%; transition: all 500ms ease-in-out;");
+  $barBg.setAttribute("style", "background-color: " + context.options.brandColor + ";" + "position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0.15;");
 }
+
 /**
  * @param {Object}
-*/
-
-
+ */
 function animateBar($bar) {
-  var maxWidth = window.innerWidth,
-      step = 10,
-      increaseBar;
-  animateInterval = setInterval(function () {
+  let maxWidth = window.innerWidth,
+    step = 10,
+    increaseBar;
+  animateInterval = setInterval(() => {
     increaseBar = increaseBar ? step + increaseBar : step;
-
     if (increaseBar <= maxWidth) {
-      $bar.style.width = increaseBar + 'px';
+      $bar.style.width = increaseBar + "px";
     } else {
       clearInterval(animateInterval);
     }
   }, 50);
 }
+
 /**
  * @param {Object}
  * @param {Object}
-*/
-
-
+ */
 function removeBar($jProgress, $bar) {
-  $bar.style.width = window.innerWidth + 'px';
-  $jProgress.addEventListener('transitionend', function () {
-    $jProgress.style.opacity = '0.5';
-    setTimeout(function () {
-      $jProgress.style.opacity = '0';
+  $bar.style.width = window.innerWidth + "px";
+  $jProgress.addEventListener("transitionend", () => {
+    $jProgress.style.opacity = "0.5";
+    setTimeout(() => {
+      $jProgress.style.opacity = "0";
       $jProgress.remove();
     }, 150);
   });
 }
-
 jProgress = {
   options: {
-    brandColor: '#de6c4f',
-    progressHeight: '3',
-    zIndex: '9999',
-    parent: 'body'
+    brandColor: "#de6c4f",
+    progressHeight: "3",
+    zIndex: "9999",
+    parent: "body"
   },
-
   /**
    * @param {Object}
-  */
-  configure: function configure(options) {
-    this.options = _extends({}, this.options, options);
+   */
+  configure(options) {
+    this.options = Object.assign({}, this.options, options);
     return this;
   },
-  start: function start() {
+  start() {
     render.call(this);
-    $jProgress = document.getElementsByClassName('jProgress');
-    $bar = $jProgress[0].getElementsByClassName('bar');
-    $barBg = $jProgress[0].getElementsByClassName('barBg');
+    $jProgress = document.getElementsByClassName("jProgress");
+    $bar = $jProgress[0].getElementsByClassName("bar");
+    $barBg = $jProgress[0].getElementsByClassName("barBg");
     styleBar($jProgress[0], $bar[0], $barBg[0], this);
     animateBar($bar[0]);
   },
-  stop: function stop() {
+  stop() {
     clearInterval(animateInterval);
     removeBar($jProgress[0], $bar[0]);
   }
