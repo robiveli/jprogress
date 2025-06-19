@@ -2,7 +2,7 @@
     "name": "jprogress",
     "title": "jProgress.js",
     "description": "Simple slim lightweight(<2KB) JavaScript progress bar plugin",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "license": "MIT",
     "author": {
         "name": "Robert Velickovski",
